@@ -4,8 +4,7 @@ using namespace std;
 
 int main(){
     int n=-6, i=0,ans=0;
-    // Convert into positive number
-    n=n+(-2*n);
+    n=n+(-2*n); // Convert into positive number
     
     // Convert into Binary
     while(n!=0){
