@@ -19,3 +19,25 @@ int main(){
 
     return 0;
 }
+
+// Other Approach
+
+int main(){
+    int n=16, count=0;
+
+    while(n!=0){
+        if(n&1){
+            count++;
+        }
+        n=n>>1;
+    }
+    
+    if(count==1){
+        cout<<"true";
+    }
+    else{
+        cout<<"false";
+    }
+
+    return 0;
+}
