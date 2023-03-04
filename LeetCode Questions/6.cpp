@@ -5,7 +5,30 @@
 using namespace std;
 
 int UniqueOccurence(int arr[], int n){
-    
+    int maxi=0;
+    for(int i=0;i<n;i++){
+        maxi= max(maxi,arr[i]);
+    }
+
+    int freq[maxi+1]={0};
+    for(int i=0;i<n;i++){
+        freq[arr[i]]++;
+    }
+
+    for(int i=0;i<(maxi+1);i++){
+        if(freq[i]!=0){
+            // cout<<i<<" -> "<<freq[i]<<"\n";
+            // ans=ans^freq[i];
+            // cout<<freq[i]<<"\n";
+            if(freq[i]!=freq[i+1]){
+                return 1;
+            }
+            else{
+                return 0;
+            }
+        }
+    }
+    return 0;
 }
 
 int main(){
@@ -14,8 +37,16 @@ int main(){
     cin>>size;
     int arr[100];
 
+    cout<<"Enter elements of an array: ";
     for(int i=0;i<size;i++){
         cin>>arr[i];
+    }
+
+    if(UniqueOccurence(arr,size)){
+        cout<<"true";
+    }
+    else{
+        cout<<"false";
     }
 
     return 0;
