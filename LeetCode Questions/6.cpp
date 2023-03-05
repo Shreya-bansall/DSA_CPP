@@ -20,15 +20,24 @@ int UniqueOccurence(int arr[], int n){
             // cout<<i<<" -> "<<freq[i]<<"\n";
             // ans=ans^freq[i];
             // cout<<freq[i]<<"\n";
-            if(freq[i]!=freq[i+1]){
-                return 1;
-            }
-            else{
-                return 0;
-            }
+
+            // if(freq[i]!=freq[i+1]){
+            //     return 1;
+            // }
+            // else{
+            //     return 0;
+            // }
+
+            // for(int i=0;i<n;i++){
+            //     for(int j=(i+1);j<n;j++){
+            //         if(freq[i]==freq[j]){
+            //             return 0;
+            //         }
+            //     }
+            // }
         }
     }
-    return 0;
+    return 1;
 }
 
 int main(){
