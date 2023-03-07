@@ -1,10 +1,11 @@
 // Link: - https://leetcode.com/problems/unique-number-of-occurrences/
 // Unique Number of Occurrences
+// ???????
 
 #include<iostream>
 using namespace std;
 
-int UniqueOccurence(int arr[], int n){
+void UniqueOccurence(int arr[], int n){
     int maxi=0;
     for(int i=0;i<n;i++){
         maxi= max(maxi,arr[i]);
@@ -35,9 +36,17 @@ int UniqueOccurence(int arr[], int n){
             //         }
             //     }
             // }
+            int idx;
+            for (idx = 0; idx < (maxi+1); ++idx) {
+                if (arr[idx] == arr[(maxi+1)]) break;
+}
+if (idx == (maxi+1)) {
+    cout << "unique\n";
+} else {
+    cout << "not unique\n";
+}
         }
     }
-    return 1;
 }
 
 int main(){
@@ -51,12 +60,6 @@ int main(){
         cin>>arr[i];
     }
 
-    if(UniqueOccurence(arr,size)){
-        cout<<"true";
-    }
-    else{
-        cout<<"false";
-    }
-
+    UniqueOccurence(arr,size);
     return 0;
 }
