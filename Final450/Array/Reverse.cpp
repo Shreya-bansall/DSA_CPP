@@ -6,7 +6,7 @@ int main(){
     cout<<"Enter size of array: ";
     int arr[100];
     cout<<"Enter elements of an array: ";
-    cout<<"Reverse: ";
+    cout<<"Reverse of a number: ";
 
     return 0;
 }
