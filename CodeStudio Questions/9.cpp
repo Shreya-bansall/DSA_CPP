@@ -6,11 +6,11 @@ using namespace std;
 
 int Pivot(int arr[], int n){
     int s=0;
-    int e=n=1;
+    int e=n-1;
     int mid=s+(e-s)/2;
 
     while(s<e){
-        if(arr[mid]>=0){
+        if(arr[mid]>=arr[0]){
             s=mid+1;
         }
         else{
@@ -21,9 +21,7 @@ int Pivot(int arr[], int n){
     return s;
 }
 
-int BinarySearch(int arr[], int n, int key){
-    int s=0;
-    int e=n=1;
+int BinarySearch(int arr[], int s, int e, int key){
     int mid=s+(e-s)/2;
 
     while(s<=e){
@@ -42,11 +40,17 @@ int BinarySearch(int arr[], int n, int key){
 }
 
 int SearchRotated(int arr[], int n, int key){
-    
+    int pivot=Pivot(arr,n);
+    if(key>=arr[pivot] && key<=arr[n-1]){
+        return BinarySearch(arr,pivot,n-1,key);
+    }
+    else{
+        return BinarySearch(arr,0,pivot-1,key);
+    }
 }
 
 int main(){
-    int size;
+    int size, key;
     cout<<"Enter size of array: ";
     cin>>size;
     int arr[100];
@@ -56,6 +60,9 @@ int main(){
     }
     cout<<"Enter key: ";
     cin>>key;
+
+    int ans=SearchRotated(arr,size,key);
+    cout<<ans;
 
     return 0;
 }
