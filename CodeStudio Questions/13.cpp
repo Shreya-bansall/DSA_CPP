@@ -43,7 +43,6 @@ int main(){
     for(int i=0;i<n;i++){
         maxi=max(maxi,arr[i]);
     }
-    
     e=maxi;
     int mid=s+(e-s)/2;
     while(s<=e){
