@@ -37,7 +37,6 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>arr[i];
     }
-    
     SortArray(arr,n);
     cout<<"Enter number of cows: ";
     cin>>k;
