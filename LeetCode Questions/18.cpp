@@ -5,15 +5,35 @@
 using namespace std;
 
 int Search(int arr[][100], int n, int m, int target){
-    for(int i=0;i<n;i++){
-        for(int j=0;j<m;j++){
-            if(arr[i][j]==target){
-                return 1;
-            }
+    int s=0;
+    int e=n*m-1;
+    int mid=s+(e-s)/2;
+    while(s<=e){
+        int element=arr[mid/m][mid%m];
+        if(element==target){
+            return 1;
         }
+        else if(element<target){
+            s=mid+1;
+        }
+        else{
+            e=mid-1;
+        }
+        mid=s+(e-s)/2;
     }
     return 0;
 }
+
+// int Search(int arr[][100], int n, int m, int target){
+//     for(int i=0;i<n;i++){
+//         for(int j=0;j<m;j++){
+//             if(arr[i][j]==target){
+//                 return 1;
+//             }
+//         }
+//     }
+//     return 0;
+// }
 
 int  main(){
     int arr[100][100], n, m;
@@ -34,10 +54,10 @@ int  main(){
     cin>>target;
 
     if(Search(arr,n,m,target)){
-        cout<<"true";
+        cout<<"True";
     }
     else{
-        cout<<"false";
+        cout<<"False";
     }
 
     return 0;
